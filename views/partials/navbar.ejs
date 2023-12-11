@@ -1,0 +1,83 @@
+<!-- navbar.ejs -->
+<style>
+  /* Add a common style for the navbar links */
+  .navbarr a {
+    display: inline-block; /* Change to inline-block to make links look like buttons */
+    padding: 10px;
+    text-decoration: none;
+    color: #333; /* Change the text color as needed */
+    border: 1px solid #ccc; /* Add a small rectangular border */
+    border-radius: 5px; /* Optional: Add border-radius for rounded corners */
+    margin: 5px; /* Adjust the margin for spacing between items */
+  }
+
+  /* Style for the active link */
+  .navbarr a.active {
+    background-color: #eee; /* Change the background color for the active item */
+  }
+</style>
+
+<nav class="navbarr">
+  <ul>
+    <li><a class="<%= (page === '/') ? 'active' : '' %>" href="/">Home</a></li>
+    <li>
+      <a
+        class="<%= (page === '/lego/sets') ? 'active' : '' %>"
+        href="/lego/sets"
+        >View Collection</a
+      >
+    </li>
+    <li>
+      <a class="<%= (page === '/about') ? 'active' : '' %>" href="/about"
+        >About</a
+      >
+    </li>
+
+    <% if (session && session.user) { %>
+    <!-- Render when there's an active session -->
+    <li>
+      <details>
+        <summary>Account: <%= session.user.userName %></summary>
+        <ul class="p-2 right-0">
+          <li>
+            <a
+              class="<%= (page === '/lego/addSet') ? 'active' : '' %>"
+              href="/lego/addSet"
+              >Add to Collection</a
+            >
+          </li>
+          <li>
+            <a
+              class="<%= (page === '/userHistory') ? 'active' : '' %>"
+              href="/userHistory"
+              >User History</a
+            >
+          </li>
+          <li><a href="/logout">Log Out</a></li>
+        </ul>
+      </details>
+    </li>
+    <% } else { %>
+    <!-- Render when there's no active session -->
+    <li>
+      <details>
+        <summary>Account</summary>
+        <ul class="p-2 right-0">
+          <li>
+            <a class="<%= (page === '/login') ? 'active' : '' %>" href="/login"
+              >Login</a
+            >
+          </li>
+          <li>
+            <a
+              class="<%= (page === '/register') ? 'active' : '' %>"
+              href="/register"
+              >Register</a
+            >
+          </li>
+        </ul>
+      </details>
+    </li>
+    <% } %>
+  </ul>
+</nav>

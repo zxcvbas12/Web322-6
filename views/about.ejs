@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About</title>
+    <link rel="stylesheet" href="/css/main.css" />
+  </head>
+  <body tabindex="-1">
+    <br />
+    <%- include('partials/navbar', {page: '/about'}) %>
+    <div class="navbar bg-base-100">
+      <div class="flex-1">
+        <a class="btn btn-ghost normal-case text-xl" href="/"
+          >Lego Collection</a
+        >
+      </div>
+    </div>
+
+    <ul class="menu menu-horizontal px-1">
+      <li><a href="/about">About</a></li>
+      <li>
+        <details>
+          <summary>Theme</summary>
+          <ul class="p-2 bg-base-100 right-0">
+            <li><a href="/lego/sets?theme=technic">Technic</a></li>
+            <li>
+              <a href="/lego/sets?theme=classic town">Classic Town</a>
+            </li>
+            <li>
+              <a href="/lego/sets?theme=supplemental">Supplemental</a>
+            </li>
+          </ul>
+        </details>
+      </li>
+    </ul>
+    <br />
+    <div class="container mx-auto">
+      <div class="hero bg-base-200 rounded-lg p-6">
+        <div class="hero-content text-center">
+          <div class="max-w-md">
+            <h1 class="text-5xl font-bold">About</h1>
+            <p class="py-6">All about me, the designer & developer.</p>
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div>
+          <img
+            class="w-full rounded-lg"
+            src="https://educationsnapshots.com/wp-content/uploads/sites/4/2022/01/seneca-college-newnham-campus-food-hall-3-700x467-compact.jpg"
+            alt="profile"
+          />
+        </div>
+        <div class="prose">
+          <p>
+            My name is Ji Ho Nam and I'm currently studying at Seneca College.
+          </p>
+          <p>
+            I enjoy designing and developing web applications, and I'm always
+            eager to learn new technologies.
+          </p>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

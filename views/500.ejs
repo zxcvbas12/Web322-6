@@ -1,0 +1,29 @@
+<!-- /views/500.ejs -->
+
+<!-- Additional cosmetic updates or information can be added here -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>500 ERROR</title>
+  </head>
+  <body>
+    <%- include('partials/navbar', { page: '/about' }) %>
+
+    <div class="container mx-auto mt-8">
+      <h1 class="text-6xl text-center mb-4">500 - Internal Server Error</h1>
+
+      <p class="text-xl text-center mb-6">
+        I'm sorry, but we have encountered the following error:
+      </p>
+
+      <p class="text-center mb-6">set_num must be unique.</p>
+
+      <div class="text-center">
+        <a href="/" class="btn btn-primary">Go to Home</a>
+      </div>
+    </div>
+  </body>
+</html>
